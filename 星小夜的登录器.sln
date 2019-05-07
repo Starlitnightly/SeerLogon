@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "星小夜的登录器", "星小夜的登录器\星小夜的登录器.csproj", "{996B1BCC-6D77-442B-9617-BC8B46EED1E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{996B1BCC-6D77-442B-9617-BC8B46EED1E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{996B1BCC-6D77-442B-9617-BC8B46EED1E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{996B1BCC-6D77-442B-9617-BC8B46EED1E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{996B1BCC-6D77-442B-9617-BC8B46EED1E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0ACB34A-E5B5-4D86-8C18-904E1FA28412}
+	EndGlobalSection
+EndGlobal
