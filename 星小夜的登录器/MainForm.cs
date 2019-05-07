@@ -57,7 +57,9 @@ namespace 星小夜的登录器
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            int pid;
+            pid = Getseerhwnd2();
+            dm.BindWindow(pid, "dx2", "windows", "windows", 0);
         }//无
 
         private void button2_Click(object sender, EventArgs e)//打开精灵王脚本
@@ -120,10 +122,10 @@ namespace 星小夜的登录器
         }
         private void Comscripts_Tick(object sender, EventArgs e)//竞技脚本定时器
         {
-            var confirmtask = confirm.StartNew(() => Confirmbutton());
-            confirmcts.Dispose();
+            //var confirmtask = confirm.StartNew(() => Confirmbutton());
+            //confirmcts.Dispose();
             var clickpeaktask = script.StartNew(() => PeakComScript());
-            scriptcts.Dispose();            
+            //scriptcts.Dispose();            
             Application.DoEvents();
             Delay(500);
         }
@@ -137,6 +139,11 @@ namespace 星小夜的登录器
             Application.DoEvents();
             Delay(500);
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Comscripts.Enabled = true;
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)//窗口即将销毁时

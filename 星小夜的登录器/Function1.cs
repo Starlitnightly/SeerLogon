@@ -27,6 +27,7 @@ namespace 星小夜的登录器
             hwnd = GetWindow1(hwnd, GW_HWNDNEXT);
             hwnd = GetWindow1(hwnd, GW_HWNDNEXT);
             hwnd = GetWindow1(hwnd, GW_HWNDNEXT);
+            hwnd = GetWindow1(hwnd, GW_HWNDNEXT);
             hwnd = GetWindow1(hwnd, GW_CHILD);
             hwnd = GetWindow1(hwnd, GW_CHILD);
             hwnd = GetWindow1(hwnd, GW_CHILD);
@@ -56,6 +57,14 @@ namespace 星小夜的登录器
         static TaskFactory Peakscript2 = new TaskFactory(cts2.Token);//ban三黑线程
         static CancellationTokenSource cts3 = new CancellationTokenSource();
         static TaskFactory Peakscript3 = new TaskFactory(cts3.Token);//自动克制系出战线程
+        static CancellationTokenSource cts4 = new CancellationTokenSource();
+        static TaskFactory Peakscript4 = new TaskFactory(cts4.Token);//无
+        static CancellationTokenSource cts5 = new CancellationTokenSource();
+        static TaskFactory Peakscript5 = new TaskFactory(cts5.Token);//出战界面线程
+        static CancellationTokenSource cts6 = new CancellationTokenSource();
+        static TaskFactory Peakscript6 = new TaskFactory(cts6.Token);//自动补pp线程
+
+        static string Nowskill;
 
         public static void Confirmbutton()//自动确认按钮
         {
@@ -106,6 +115,12 @@ namespace 星小夜的登录器
 
         public static void PeakComScript()//巅峰竞技脚本
         {
+            
+            if (dm.FindPic(0, 0, 1000, 1000, "操作超时.bmp", "000000", 0.8, 0, out x, out y) != -1)
+            {
+                dm.MoveTo(489, 359);
+                dm.LeftClick();
+            }
             if (dm.FindPic(0, 0, 1000, 1000, "巅峰.bmp", "000000", 0.8, 0, out x, out y) == -1)
             {
                 if (dm.FindPic(0, 0, 1000, 1000, "圣战图标.bmp", "000000", 0.8, 0, out x, out y) != -1)
@@ -114,24 +129,38 @@ namespace 星小夜的登录器
                     dm.LeftClick();
                 }
             }
-            if (dm.FindPicEx(0, 0, 1000, 1000, "巅峰.bmp|狂野.bmp|竞技.bmp|注意.bmp", "000000", 0.8, 0) != "-1|-1|-1")
+            if (dm.FindPic(0, 0, 1000, 1000, "巅峰.bmp|狂野.bmp|竞技.bmp|注意.bmp", "000000",0.8,0,out x,out y) != -1)
             {
                 var scripttask2=Peakscript1.StartNew(() => JudgePeak());
-                cts1.Cancel();
+                cts1.Dispose();
 
             }
-            if (dm.FindPicEx(0, 0, 1000, 1000, "ban.bmp", "000000", 0.8, 0) != "-1|-1|-1")
+            if (dm.FindPic(0, 0, 1000, 1000, "ban.bmp", "000000", 0.8, 0,out x,out y) != -1)
             {
                 var scripttask2=Peakscript2.StartNew(() => Bans());
                 cts2.Dispose();
 
             }
+            
             if (dm.FindPic(0, 0, 1000, 1000, "×.bmp", "000000", 0.8, 0, out x, out y) != -1)
             {
                 dm.MoveTo((int)x + 5, (int)y + 5);
                 dm.LeftClick();
             }
-            Application.DoEvents();
+
+            AutoRestraint();
+            
+            var scripttask3 = Peakscript3.StartNew(() => AutoRestraint());
+            cts3.Dispose();
+
+            if (dm.FindPic(0, 0, 1000, 1000, "首发.bmp|出战.bmp", "000000", 0.8, 0, out x, out y) != -1)
+            {
+                var scripttask5 = Peakscript5.StartNew(() => SelectionWizard());
+                cts5.Dispose();
+            }
+            
+            StarlitSkill();
+            Delay(1000);
 
 
         }
@@ -318,7 +347,7 @@ namespace 星小夜的登录器
             }
         }
 
-        public static void FirstEpisode()//首发精灵选择
+        public static void FirstEpisode()//自动选择首发精灵
         {
             
             if (dm.FindPic(469, 12, 958, 559, "禁用.bmp", "000000", 0.8, 0, out x, out y) != -1)
@@ -341,8 +370,7 @@ namespace 星小夜的登录器
                 {
                     dm.MoveTo((int)x + 5, (int)y + 5);
                     dm.LeftClick();
-                }
-                else if(dm.FindPic(0, 0, 600, 559, "lh.bmp", "000000", 0.8, 0, out x, out y) != -1)//猎皇
+                }else if(dm.FindPic(0, 0, 600, 559, "lh.bmp", "000000", 0.8, 0, out x, out y) != -1)//猎皇
                 {
                     dm.MoveTo((int)x + 5, (int)y + 5);
                     dm.LeftClick();
@@ -366,7 +394,8 @@ namespace 星小夜的登录器
 
             }
         }
-        public static void GotoWar()//出战精灵选择
+
+        public static void GotoWar()//自动选择出战精灵
         {
             if (dm.FindPic(11, 221, 112, 337, "禁用.bmp|首发小图.bmp", "000000", 0.8, 0, out x, out y) == -1)//1
             {
@@ -430,6 +459,109 @@ namespace 星小夜的登录器
             }
         }
 
+        public static void Fillingpp()//自动补pp
+        {
+            if (dm.FindPic(0, 0, 1000, 600, "道具.bmp", "000000", 0.8, 0, out x, out y) != -1 )
+            {
+                if (dm.FindPic(0, 300, 971, 570, "第五0.bmp", "000000", 0.8, 0, out x, out y) != -1 || dm.FindPic(14, 327, 971, 570, "0.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                {
+                    dm.MoveTo(923, 450);
+                    dm.LeftClick();
+                }
+                Delay(500);
+                dm.MoveTo(206, 450);
+                dm.LeftClick();
+                for (int i = 0; i < 30; i++)
+                {
+                    if (dm.FindPic(0, 0, 1000, 600, "10PP药.bmp|5PP药.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                    {
+                        dm.MoveTo((int)x+5, (int)y+5);
+                        dm.LeftClick();
+                        break;
+                    }
+                }
+            }
+            
+        }
+
+        public static void Sprite()//换精灵时从克制，普通，微弱出战
+        {
+            if (dm.FindPic(0, 0, 1000, 600, "克制图片.bmp", "000000", 0.8, 0, out x, out y) != -1)
+            {
+                dm.MoveTo((int)x, (int)y+10);
+                dm.LeftClick();
+                for (int i = 0; i < 30; i++)
+                {
+                    if (dm.FindPic(0, 0, 1000, 600, "出战按钮.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                    {
+                        dm.MoveTo((int)x, (int)y);
+                        dm.LeftClick();
+                        break;
+                    }
+                }
+            }else if (dm.FindPic(0, 0, 1000, 600, "普通.bmp", "000000", 0.8, 0, out x, out y) != -1)
+            {
+                dm.MoveTo((int)x, (int)y + 10);
+                dm.LeftClick();
+                for (int i = 0; i < 30; i++)
+                {
+                    if (dm.FindPic(0, 0, 1000, 600, "出战按钮.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                    {
+                        dm.MoveTo((int)x, (int)y);
+                        dm.LeftClick();
+                        break;
+                    }
+                }
+            }else if (dm.FindPic(0, 0, 1000, 600, "微弱.bmp", "000000", 0.8, 0, out x, out y) != -1)
+            {
+                dm.MoveTo((int)x, (int)y + 10);
+                dm.LeftClick();
+                for (int i = 0; i < 30; i++)
+                {
+                    if (dm.FindPic(0, 0, 1000, 600, "出战按钮.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                    {
+                        dm.MoveTo((int)x, (int)y);
+                        dm.LeftClick();
+                        break;
+                    }
+                }
+            }
+
+        }
+
+        public static void StarlitSkill()
+        {
+            bool iszero = false;
+            if (dm.FindPic(0, 0, 1000, 600, "道具.bmp", "000000", 0.8, 0, out x, out y) != -1)
+            {
+                if (dm.FindPic(0, 300, 971, 570, "第五0.bmp", "000000", 0.8, 0, out x, out y) != -1 || dm.FindPic(14, 327, 971, 570, "0.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                {
+                    iszero = true;
+                    var scripttask6 = Peakscript6.StartNew(() => Fillingpp());
+                    cts6.Dispose();
+                }
+            }
+            if (iszero == false)
+            {
+                if (Nowskill == "第一")
+                {
+                    if (dm.FindColor(284, 509, 297, 518, "0388ec-000000", 1, 0, out x, out y) != 0)
+                    {
+                        dm.MoveTo(245, 516);
+                        dm.LeftClick();
+                        Nowskill = "第五";
+                    }
+                }else if (Nowskill == "第五")
+                {
+                    if (dm.FindColor(18, 476, 89, 493, "fffad4-000000", 1, 0, out x, out y) != 0)
+                    {
+                        dm.MoveTo(40, 506);
+                        dm.LeftClick();
+                        Nowskill = "第一";
+                    }
+                }
+            }
+        }
     }
    
 

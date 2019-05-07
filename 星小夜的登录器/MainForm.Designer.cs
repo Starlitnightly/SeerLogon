@@ -40,6 +40,7 @@
             this.Autoconfirmation = new System.Windows.Forms.Timer(this.components);
             this.Comscripts = new System.Windows.Forms.Timer(this.components);
             this.Kingscript = new System.Windows.Forms.Timer(this.components);
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -101,7 +102,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1083, 292);
+            this.button3.Location = new System.Drawing.Point(1084, 321);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 4;
@@ -138,6 +139,7 @@
             // 
             // Comscripts
             // 
+            this.Comscripts.Interval = 1000;
             this.Comscripts.Tick += new System.EventHandler(this.Comscripts_Tick);
             // 
             // Kingscript
@@ -145,11 +147,22 @@
             this.Kingscript.Interval = 500;
             this.Kingscript.Tick += new System.EventHandler(this.Kingscript_Tick);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(1084, 292);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "竞技脚本";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1167, 634);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -180,6 +193,7 @@
         private System.Windows.Forms.Timer Autoconfirmation;
         private System.Windows.Forms.Timer Comscripts;
         private System.Windows.Forms.Timer Kingscript;
+        private System.Windows.Forms.Button button5;
     }
 }
 
