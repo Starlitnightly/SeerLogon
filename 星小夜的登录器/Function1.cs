@@ -17,7 +17,7 @@ namespace 星小夜的登录器
     {
         
         
-        int Getseerhwnd2()//获取窗口句柄
+        private static int Getseerhwnd2()//获取窗口句柄
         {
             int hwnd = 0;
             hwnd = FindWindowExA(0, 0, "WindowsForms10.Window.8.app.0.141b42a_r10_ad1", "Form1");
@@ -37,8 +37,6 @@ namespace 星小夜的登录器
 
 
         }
-
-        
         private static void Delay(int Millisecond) //延迟系统时间，但系统又能同时能执行其它任务；
         {
             DateTime current = DateTime.Now;
@@ -48,12 +46,17 @@ namespace 星小夜的登录器
             }
             return;
         }
+
+
+
+
         static CancellationTokenSource cts1 = new CancellationTokenSource();
         static TaskFactory Peakscript1 = new TaskFactory(cts1.Token);//判断进入巅峰线程
         static CancellationTokenSource cts2 = new CancellationTokenSource();
         static TaskFactory Peakscript2 = new TaskFactory(cts2.Token);//ban三黑线程
         static CancellationTokenSource cts3 = new CancellationTokenSource();
         static TaskFactory Peakscript3 = new TaskFactory(cts3.Token);//自动克制系出战线程
+
         public static void Confirmbutton()//自动确认按钮
         {
             if (dm.FindPic(0, 0, 1000, 700, "战败确认.bmp|奖章确认.bmp", "000000", 0.8, 0, out x, out y) != -1)
