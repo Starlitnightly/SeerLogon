@@ -89,11 +89,32 @@ namespace 星小夜的登录器
                 dm.MoveTo((int)x, (int)y);
                 dm.LeftClick();
             }
-            if (dm.FindPic(0, 0, 1000, 700, "战败确认.bmp|奖章确认.bmp", "000000", 0.8, 0, out x, out y) != -1)
+            if (dm.FindPic(0, 0, 1000, 700, "战胜确认.bmp|消息盒子x.bmp", "000000", 0.8, 0, out x, out y) != -1)
             {
                 dm.MoveTo((int)x, (int)y);
                 dm.LeftClick();
             }
+            if (dm.FindPic(0, 0, 1000, 700, "巅峰自动x.bmp|nox.bmp", "000000", 0.8, 0, out x, out y) != -1)
+            {
+                dm.MoveTo((int)x, (int)y);
+                dm.LeftClick();
+            }
+            if (dm.FindPic(0, 0, 1000, 700, "sptrespd1.bmp", "000000", 0.8, 0, out x, out y) != -1)
+            {
+                dm.MoveTo((int)x, (int)y);
+                dm.LeftClick();
+            }
+            if (dm.FindPic(0, 0, 1000, 700, "bxss.bmp", "000000", 0.8, 0, out x, out y) != -1)
+            {
+                dm.MoveTo((int)x, (int)y);
+                dm.LeftClick();
+            }
+            if (dm.FindPic(0, 0, 1000, 700, "每周登录礼包.bmp|每周x.bmp", "000000", 0.8, 0, out x, out y) != -1)
+            {
+                dm.MoveTo((int)x, (int)y);
+                dm.LeftClick();
+            }
+            
 
             Delay(1000);
 
