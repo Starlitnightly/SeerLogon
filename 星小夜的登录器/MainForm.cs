@@ -143,6 +143,7 @@ namespace 星小夜的登录器
 
         private void button5_Click(object sender, EventArgs e)
         {
+            Nowskill = "第一";
             Comscripts.Enabled = true;
         }
 

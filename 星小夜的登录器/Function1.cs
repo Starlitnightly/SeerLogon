@@ -65,7 +65,8 @@ namespace 星小夜的登录器
         static TaskFactory Peakscript6 = new TaskFactory(cts6.Token);//自动补pp线程
 
         static string Nowskill;
-
+        static string Nowwizard;
+        static string Nowwizardskill;
         public static void Confirmbutton()//自动确认按钮
         {
             if (dm.FindPic(0, 0, 1000, 700, "战败确认.bmp|奖章确认.bmp", "000000", 0.8, 0, out x, out y) != -1)
@@ -543,21 +544,406 @@ namespace 星小夜的登录器
             }
             if (iszero == false)
             {
-                if (Nowskill == "第一")
+
+                if (dm.FindPic(83, 9, 212, 100, "dqlh2.bmp | dqlh.bmp", "000000", 0.8, 0, out x, out y) != -1)//猎皇专属出招
                 {
-                    if (dm.FindColor(284, 509, 297, 518, "0388ec-000000", 1, 0, out x, out y) != 0)
+                    if (Nowwizard != "猎皇")
+                        Nowwizardskill = "暗猎惊魂";
+                    Nowwizard = "猎皇";
+
+                    if (Nowwizardskill == "暗猎惊魂")
                     {
-                        dm.MoveTo(245, 516);
-                        dm.LeftClick();
-                        Nowskill = "第五";
+                        if (dm.FindPic(66, 417, 836, 565, "jn-aljh.bmp|jn-aljh2.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        {
+                            dm.MoveTo((int)x, (int)y);
+                            dm.LeftClick();
+                            Nowwizardskill = "第五";
+                        }
                     }
-                }else if (Nowskill == "第五")
-                {
-                    if (dm.FindColor(18, 476, 89, 493, "fffad4-000000", 1, 0, out x, out y) != 0)
+                    else if (Nowwizardskill == "第五")
                     {
-                        dm.MoveTo(40, 506);
-                        dm.LeftClick();
-                        Nowskill = "第一";
+                        if (dm.FindColor(18, 476, 89, 493, "fffad4-000000", 1, 0, out x, out y) != 0)
+                        {
+                            dm.MoveTo(40, 506);
+                            dm.LeftClick();
+                            Nowwizardskill = "暗猎惊魂";
+                        }
+                    }
+
+
+                }
+                else if (dm.FindPic(83, 9, 212, 100, "dpzlhm.bmp|dqzlhm.bmp", "000000", 0.8, 0, out x, out y) != -1)//战龙哈莫专属出招
+                {
+                    if (Nowwizard != "战龙哈莫")
+                        Nowwizardskill = "龙威之姿";
+                    Nowwizard = "战龙哈莫";
+
+                    if (Nowwizardskill == "龙威之姿")
+                    {
+                        if (dm.FindPic(66, 417, 836, 565, "jn-lwzz.bmp|jn-lwzz2.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        {
+                            dm.MoveTo((int)x, (int)y);
+                            dm.LeftClick();
+                            Nowwizardskill = "第五";
+                        }
+                    }
+                    else if (Nowwizardskill == "第五")
+                    {
+                        if (dm.FindColor(18, 476, 89, 493, "fffad4-000000", 1, 0, out x, out y) != 0)
+                        {
+                            dm.MoveTo(40, 506);
+                            dm.LeftClick();
+                            Nowwizardskill = "龙威之姿";
+                        }
+                    }
+
+
+                }
+                else if (dm.FindPic(83, 9, 212, 100, "dpgwsjl.bmp|dqgw2.bmp", "000000", 0.8, 0, out x, out y) != -1)//光王斯嘉丽专属出招
+                {
+                    if (Nowwizard != "光王斯嘉丽")
+                        Nowwizardskill = "纯白光羽";
+                    Nowwizard = "光王斯嘉丽";
+
+                    if (Nowwizardskill == "纯白光羽")
+                    {
+                        if (dm.FindPic(66, 417, 836, 565, "jn-cbgy.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        {
+                            dm.MoveTo((int)x, (int)y);
+                            dm.LeftClick();
+                            Nowwizardskill = "第五";
+                        }
+                    }
+                    else if (Nowwizardskill == "第五")
+                    {
+                        if (dm.FindColor(18, 476, 89, 493, "fffad4-000000", 1, 0, out x, out y) != 0)
+                        {
+                            dm.MoveTo(40, 506);
+                            dm.LeftClick();
+                            Nowwizardskill = "第五";
+                        }
+                    }
+
+
+                }
+                else if (dm.FindPic(83, 9, 212, 100, "dqpdl.bmp", "000000", 0.8, 0, out x, out y) != -1)//潘多拉专属出招
+                {
+                    if (Nowwizard != "潘多拉")
+                        Nowwizardskill = "冥之孤傲";
+                    Nowwizard = "潘多拉";
+
+                    if (Nowwizardskill == "冥之孤傲")
+                    {
+                        if (dm.FindPic(66, 417, 836, 565, "jn-mzga.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        {
+                            dm.MoveTo((int)x, (int)y);
+                            dm.LeftClick();
+                            Nowwizardskill = "女王之厄";
+                        }
+                    }
+                    else if (Nowwizardskill == "女王之厄")
+                    {
+                        if (dm.FindPic(66, 417, 836, 565, "jn-nwze.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        {
+                            dm.MoveTo((int)x, (int)y);
+                            dm.LeftClick();
+                            Nowwizardskill = "第五";
+                        }
+                    }
+                    else if (Nowwizardskill == "第五")
+                    {
+                        if (dm.FindColor(18, 476, 89, 493, "fffad4-000000", 1, 0, out x, out y) != 0)
+                        {
+                            dm.MoveTo(40, 506);
+                            dm.LeftClick();
+                            Nowwizardskill = "第五";
+                        }
+                    }
+
+
+                }
+                else if (dm.FindPic(83, 9, 212, 100, "dqsl.bmp|dqsl1.bmp", "000000", 0.8, 0, out x, out y) != -1)//圣霆雷伊专属出招
+                {
+                    if (Nowwizard != "圣霆雷伊")
+                        Nowwizardskill = "电灵祝福";
+                    Nowwizard = "圣霆雷伊";
+
+                    if (Nowwizardskill == "电灵祝福")
+                    {
+                        if (dm.FindPic(66, 417, 836, 565, "jn-dlzf.bmp|jn-dlzf2.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        {
+                            dm.MoveTo((int)x, (int)y);
+                            dm.LeftClick();
+                            Nowwizardskill = "庇护之心";
+                        }
+                    }
+                    else if (Nowwizardskill == "庇护之心")
+                    {
+                        if (dm.FindPic(66, 417, 836, 565, "jn-bhzx1.bmp|jn-bhzx3.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        {
+                            dm.MoveTo((int)x, (int)y);
+                            dm.LeftClick();
+                            Nowwizardskill = "第五";
+                        }
+                    }
+                    else if (Nowwizardskill == "第五")
+                    {
+                        if (dm.FindColor(18, 476, 89, 493, "fffad4-000000", 1, 0, out x, out y) != 0)
+                        {
+                            dm.MoveTo(40, 506);
+                            dm.LeftClick();
+                            Nowwizardskill = "第五";
+                        }
+                    }
+
+
+                }
+                else if (dm.FindPic(83, 9, 212, 100, "dqgy.bmp|dqgy1.bmp", "000000", 0.8, 0, out x, out y) != -1)//光之惩戒专属出招
+                {
+                    if (Nowwizard != "英卡洛斯")
+                        Nowwizardskill = "光之惩戒";
+                    Nowwizard = "英卡洛斯";
+
+                    if (Nowwizardskill == "光之惩戒")
+                    {
+                        if (dm.FindPic(66, 417, 836, 565, "jn-gzcj.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        {
+                            dm.MoveTo((int)x, (int)y);
+                            dm.LeftClick();
+                            Nowwizardskill = "无始源光";
+                        }
+                    }
+                    else if (Nowwizardskill == "无始源光")
+                    {
+                        if (dm.FindPic(66, 417, 836, 565, "jn-wsyg.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        {
+                            dm.MoveTo((int)x, (int)y);
+                            dm.LeftClick();
+                            Nowwizardskill = "第五";
+                        }
+                    }
+                    else if (Nowwizardskill == "第五")
+                    {
+                        if (dm.FindColor(18, 476, 89, 493, "fffad4-000000", 1, 0, out x, out y) != 0)
+                        {
+                            dm.MoveTo(40, 506);
+                            dm.LeftClick();
+                            Nowwizardskill = "第五";
+                        }
+                    }
+
+
+
+                }else if (dm.FindPic(83, 9, 212, 100, "dqhb.bmp", "000000", 0.8, 0, out x, out y) != -1)//混沌布莱克专属出招
+                {
+                    if (Nowwizard != "混沌布莱克")
+                        Nowwizardskill = "孑然孤梦";
+                    Nowwizard = "混沌布莱克";
+
+                    if (Nowwizardskill == "孑然孤梦")
+                    {
+                        if (dm.FindPic(66, 417, 836, 565, "jn-jrgm.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        {
+                            dm.MoveTo((int)x, (int)y);
+                            dm.LeftClick();
+                            Nowwizardskill = "第五1";
+                        }
+                    }                    
+                    else if (Nowwizardskill == "第五1")
+                    {
+                        if (dm.FindColor(18, 476, 89, 493, "fffad4-000000", 1, 0, out x, out y) != 0)
+                        {
+                            dm.MoveTo(40, 506);
+                            dm.LeftClick();
+                            Nowwizardskill = "第五2";
+                        }
+                    }
+                    else if (Nowwizardskill == "第五2")
+                    {
+                        if (dm.FindColor(18, 476, 89, 493, "fffad4-000000", 1, 0, out x, out y) != 0)
+                        {
+                            dm.MoveTo(40, 506);
+                            dm.LeftClick();
+                            Nowwizardskill = "孑然孤梦";
+                        }
+                    }
+
+
+
+                }else if (dm.FindPic(83, 9, 212, 100, "dqmlw.bmp|dqmlw1.bmp", "000000", 0.8, 0, out x, out y) != -1)//魔灵王专属出招
+                {
+                    if (Nowwizard != "魔灵王")
+                        Nowwizardskill = "荒芜之境";
+                    Nowwizard = "魔灵王";
+
+                    if (Nowwizardskill == "荒芜之境")
+                    {
+                        if (dm.FindPic(66, 417, 836, 565, "jn-hwzj.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        {
+                            dm.MoveTo((int)x, (int)y);
+                            dm.LeftClick();
+                            Nowwizardskill = "摄魄令";
+                        }
+                    }
+                    else if (Nowwizardskill == "摄魄令")
+                    {
+                        if (dm.FindPic(66, 417, 836, 565, "jn-shl.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        {
+                            dm.MoveTo((int)x, (int)y);
+                            dm.LeftClick();
+                            Nowwizardskill = "荒芜之境";
+                        }
+                    }
+
+
+
+                }else if (dm.FindPic(83, 9, 212, 100, "dqxw.bmp|dqxw2.bmp", "000000", 0.8, 0, out x, out y) != -1)//希瓦专属出招
+                {
+                    if (Nowwizard != "希瓦")
+                        Nowwizardskill = "白日喧嚣";
+                    Nowwizard = "希瓦";
+
+                    if (Nowwizardskill == "白日喧嚣")
+                    {
+                        if (dm.FindPic(66, 417, 836, 565, "jn-brxx.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        {
+                            dm.MoveTo((int)x, (int)y);
+                            dm.LeftClick();
+                            Nowwizardskill = "第五1";
+                        }
+                    }
+                    else if (Nowwizardskill == "第五1")
+                    {
+                        if (dm.FindColor(18, 476, 89, 493, "fffad4-000000", 1, 0, out x, out y) != 0)
+                        {
+                            dm.MoveTo(40, 506);
+                            dm.LeftClick();
+                            Nowwizardskill = "第五2";
+                        }
+                    }
+                    else if (Nowwizardskill == "第五2")
+                    {
+                        if (dm.FindColor(18, 476, 89, 493, "fffad4-000000", 1, 0, out x, out y) != 0)
+                        {
+                            dm.MoveTo(40, 506);
+                            dm.LeftClick();
+                            Nowwizardskill = "白日喧嚣";
+                        }
+                    }
+
+
+
+                }else if (dm.FindPic(83, 9, 212, 100, "dqhyxh.bmp|dqxh2.bmp", "000000", 0.8, 0, out x, out y) != -1)//星皇专属出招
+                {
+                    if (Nowwizard != "星皇")
+                        Nowwizardskill = "瀚空之门";
+                    Nowwizard = "星皇";
+
+                    if (Nowwizardskill == "瀚空之门")
+                    {
+                        if (dm.FindPic(66, 417, 836, 565, "jn-hkzm.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        {
+                            dm.MoveTo((int)x, (int)y);
+                            dm.LeftClick();
+                            Nowwizardskill = "命宇轮回";
+                        }
+                    }
+                    else if (Nowwizardskill == "命宇轮回")
+                    {
+                        if (dm.FindPic(66, 417, 836, 565, "jn-mylh.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        {
+                            dm.MoveTo((int)x, (int)y);
+                            dm.LeftClick();
+                            Nowwizardskill = "亘古星辰诀1";
+                        }
+                    }
+                    else if (Nowwizardskill == "亘古星辰诀1")
+                    {
+                        if (dm.FindPic(66, 417, 836, 565, "jn-ggxcj.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        {
+                            dm.MoveTo((int)x, (int)y);
+                            dm.LeftClick();
+                            Nowwizardskill = "亘古星辰诀2";
+                        }
+                    }
+                    else if (Nowwizardskill == "亘古星辰诀2")
+                    {
+                        if (dm.FindPic(66, 417, 836, 565, "jn-ggxcj.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        {
+                            dm.MoveTo((int)x, (int)y);
+                            dm.LeftClick();
+                            Nowwizardskill = "瀚空之门";
+                        }
+
+
+                    }
+                }else if (dm.FindPic(83, 9, 212, 100, "dqqkfes.bmp|dqfw1.bmp", "000000", 0.8, 0, out x, out y) != -1)//飞王专属出招
+                {
+                    if (Nowwizard != "飞王")
+                        Nowwizardskill = "苍鹰之眼";
+                    Nowwizard = "飞王";
+
+                    if (Nowwizardskill == "苍鹰之眼")
+                    {
+                        if (dm.FindPic(66, 417, 836, 565, "jn-cyzy.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        {
+                            dm.MoveTo((int)x, (int)y);
+                            dm.LeftClick();
+                            Nowwizardskill = "灵威天羽";
+                        }
+                    }
+                    else if (Nowwizardskill == "灵威天羽")
+                    {
+                        if (dm.FindPic(66, 417, 836, 565, "jn-lwty.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        {
+                            dm.MoveTo((int)x, (int)y);
+                            dm.LeftClick();
+                            Nowwizardskill = "第五";
+                        }
+                    }
+                    else if (Nowwizardskill == "第五")
+                    {
+                        if (dm.FindColor(18, 476, 89, 493, "fffad4-000000", 1, 0, out x, out y) != 0)
+                        {
+                            dm.MoveTo(40, 506);
+                            dm.LeftClick();
+                            Nowwizardskill = "第五";
+                        }
+                    }
+
+
+
+                }
+                else
+                {
+                    Nowwizard = "";
+                }
+
+
+
+
+
+
+
+                if (Nowwizard == "")//如果当前精灵不在默认配置内，则轮放技能
+                {
+                    if (Nowskill == "第一")
+                    {
+                        if (dm.FindColor(284, 509, 297, 518, "0388ec-000000", 1, 0, out x, out y) != 0)
+                        {
+                            dm.MoveTo(245, 516);
+                            dm.LeftClick();
+                            Nowskill = "第五";
+                        }
+                    }
+                    else if (Nowskill == "第五")
+                    {
+                        if (dm.FindColor(18, 476, 89, 493, "fffad4-000000", 1, 0, out x, out y) != 0)
+                        {
+                            dm.MoveTo(40, 506);
+                            dm.LeftClick();
+                            Nowskill = "第一";
+                        }
                     }
                 }
             }
