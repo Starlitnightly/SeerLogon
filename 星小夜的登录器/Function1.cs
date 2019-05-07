@@ -318,24 +318,115 @@ namespace 星小夜的登录器
             }
         }
 
-        public static void FirstEpisode()
+        public static void FirstEpisode()//首发精灵选择
         {
-
-        }
-        public static void GotoWar()
-        {
-            //bool IsSelection = false;
+            
             if (dm.FindPic(469, 12, 958, 559, "禁用.bmp", "000000", 0.8, 0, out x, out y) != -1)
             {
                 Delay(1000);
-                
-                    if (dm.FindPic(0, 0, 600, 559, "sz.bmp", "000000", 0.8, 0, out x, out y) != -1)
-                    {
-                        dm.MoveTo((int)x+5, (int)y+5);
-                        dm.LeftClick();
-                        //IsSelection = true;
-                    }
-                
+
+                if (dm.FindPic(0, 0, 600, 559, "pnsf.bmp", "000000", 0.8, 0, out x, out y) != -1)//谱尼
+                {
+                    dm.MoveTo((int)x + 5, (int)y + 5);
+                    dm.LeftClick();
+                }else if (dm.FindPic(0, 0, 600, 559, "gysf.bmp", "000000", 0.8, 0, out x, out y) != -1)//光嘤
+                {
+                    dm.MoveTo((int)x + 5, (int)y + 5);
+                    dm.LeftClick();
+                }else if (dm.FindPic(0, 0, 600, 559, "xwsf.bmp", "000000", 0.8, 0, out x, out y) != -1)//希瓦
+                {
+                    dm.MoveTo((int)x + 5, (int)y + 5);
+                    dm.LeftClick();
+                }else if (dm.FindPic(0, 0, 600, 559, "gwsf.bmp", "000000", 0.8, 0, out x, out y) != -1)//光王
+                {
+                    dm.MoveTo((int)x + 5, (int)y + 5);
+                    dm.LeftClick();
+                }
+                else if(dm.FindPic(0, 0, 600, 559, "lh.bmp", "000000", 0.8, 0, out x, out y) != -1)//猎皇
+                {
+                    dm.MoveTo((int)x + 5, (int)y + 5);
+                    dm.LeftClick();
+                }else if (dm.FindPic(0, 0, 600, 559, "lhsf.bmp", "000000", 0.8, 0, out x, out y) != -1)//龙神哈莫
+                {
+                    dm.MoveTo((int)x + 5, (int)y + 5);
+                    dm.LeftClick();
+                }else if (dm.FindPic(0, 0, 600, 559, "pdl.bmp", "000000", 0.8, 0, out x, out y) != -1)//潘多拉
+                {
+                    dm.MoveTo((int)x + 5, (int)y + 5);
+                    dm.LeftClick();
+                }else if (dm.FindPic(0, 0, 600, 559, "sz.bmp", "000000", 0.8, 0, out x, out y) != -1)//索伦森
+                {
+                    dm.MoveTo((int)x + 5, (int)y + 5);
+                    dm.LeftClick();
+                }else if (dm.FindPic(0, 0, 600, 559, "zh.bmp", "000000", 0.8, 0, out x, out y) != -1)//战龙哈莫
+                {
+                    dm.MoveTo((int)x + 5, (int)y + 5);
+                    dm.LeftClick();
+                }
+
+            }
+        }
+        public static void GotoWar()//出战精灵选择
+        {
+            if (dm.FindPic(11, 221, 112, 337, "禁用.bmp|首发小图.bmp", "000000", 0.8, 0, out x, out y) == -1)//1
+            {
+                dm.MoveTo(11+25, 246);
+                dm.LeftClick();
+            }
+            if (dm.FindPic(109, 221, 211, 337, "禁用.bmp|首发小图.bmp", "000000", 0.8, 0, out x, out y) == -1)//2
+            {
+                dm.MoveTo(122 + 25, 246);
+                dm.LeftClick();
+            }
+            if (dm.FindPic(211, 221, 307, 337, "禁用.bmp|首发小图.bmp", "000000", 0.8, 0, out x, out y) == -1)//3
+            {
+                dm.MoveTo(211 + 25, 246);
+                dm.LeftClick();
+            }
+            if (dm.FindPic(307, 221, 404, 337, "禁用.bmp|首发小图.bmp", "000000", 0.8, 0, out x, out y) == -1)//4
+            {
+                dm.MoveTo(307 + 25, 246);
+                dm.LeftClick();
+            }
+            if (dm.FindPic(11, 337, 112, 455, "禁用.bmp|首发小图.bmp", "000000", 0.8, 0, out x, out y) == -1)//5
+            {
+                dm.MoveTo(11 + 25, 362);
+                dm.LeftClick();
+            }
+            if (dm.FindPic(109, 337, 211, 455, "禁用.bmp|首发小图.bmp", "000000", 0.8, 0, out x, out y) == -1)//6
+            {
+                dm.MoveTo(122 + 25, 362);
+                dm.LeftClick();
+            }
+            if (dm.FindPic(211, 337, 307, 455, "禁用.bmp|首发小图.bmp", "000000", 0.8, 0, out x, out y) == -1)//7
+            {
+                dm.MoveTo(211 + 25, 362);
+                dm.LeftClick();
+            }
+            if (dm.FindPic(307, 337, 404, 455, "禁用.bmp|首发小图.bmp", "000000", 0.8, 0, out x, out y) == -1)//8
+            {
+                dm.MoveTo(307 + 25, 362);
+                dm.LeftClick();
+            }
+            if (dm.FindPic(11, 455, 112, 564, "禁用.bmp|首发小图.bmp", "000000", 0.8, 0, out x, out y) == -1)//9
+            {
+                dm.MoveTo(11 + 25, 480);
+                dm.LeftClick();
+            }
+            if (dm.FindPic(109, 455, 211, 564, "禁用.bmp|首发小图.bmp", "000000", 0.8, 0, out x, out y) == -1)//10
+            {
+                dm.MoveTo(122 + 25, 480);
+                dm.LeftClick();
+            }
+            if (dm.FindPic(211, 455, 307, 564, "禁用.bmp|首发小图.bmp", "000000", 0.8, 0, out x, out y) == -1)//11
+            {
+                dm.MoveTo(211 + 25, 480);
+                dm.LeftClick();
+            }
+            if (dm.FindPic(307, 455, 404, 564, "禁用.bmp|首发小图.bmp", "000000", 0.8, 0, out x, out y) == -1)//12
+            {
+                dm.MoveTo(307 + 25, 480);
+                dm.LeftClick();
             }
         }
 
