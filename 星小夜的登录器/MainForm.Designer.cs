@@ -40,6 +40,8 @@
             this.Autoconfirmation = new System.Windows.Forms.Timer(this.components);
             this.Comscripts = new System.Windows.Forms.Timer(this.components);
             this.Kingscript = new System.Windows.Forms.Timer(this.components);
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +83,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1002, 263);
+            this.button1.Location = new System.Drawing.Point(1003, 213);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -101,7 +103,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1083, 292);
+            this.button3.Location = new System.Drawing.Point(1084, 321);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 4;
@@ -111,7 +113,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(1084, 263);
+            this.button4.Location = new System.Drawing.Point(1084, 292);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 5;
@@ -122,7 +124,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(1005, 342);
+            this.checkBox1.Location = new System.Drawing.Point(1002, 394);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(72, 16);
             this.checkBox1.TabIndex = 6;
@@ -138,6 +140,7 @@
             // 
             // Comscripts
             // 
+            this.Comscripts.Interval = 1000;
             this.Comscripts.Tick += new System.EventHandler(this.Comscripts_Tick);
             // 
             // Kingscript
@@ -145,11 +148,30 @@
             this.Kingscript.Interval = 500;
             this.Kingscript.Tick += new System.EventHandler(this.Kingscript_Tick);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(1002, 321);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "竞技脚本";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1084, 215);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(71, 21);
+            this.textBox1.TabIndex = 8;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1167, 634);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -180,6 +202,8 @@
         private System.Windows.Forms.Timer Autoconfirmation;
         private System.Windows.Forms.Timer Comscripts;
         private System.Windows.Forms.Timer Kingscript;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
