@@ -20,7 +20,7 @@ namespace 星小夜的登录器
         private static int Getseerhwnd2()//获取窗口句柄
         {
             int hwnd = 0;
-            hwnd = FindWindowExA(0, 0, "WindowsForms10.Window.8.app.0.141b42a_r10_ad1", "Form1");
+            hwnd = FindWindowExA(0, 0, "WindowsForms10.Window.8.app.0.141b42a_r9_ad1", "Form1");
             hwnd = GetWindow1(hwnd, GW_CHILD);
             hwnd = GetWindow1(hwnd, GW_HWNDNEXT);
             hwnd = GetWindow1(hwnd, GW_HWNDNEXT);
@@ -79,9 +79,14 @@ namespace 星小夜的登录器
                 dm.MoveTo((int)x, (int)y);
                 dm.LeftClick();
             }
-            if (dm.FindPic(0, 0, 1000, 700, "超时确认.bmp", "000000", 0.8, 0, out x, out y) != -1)
+            if (dm.FindPic(0, 0, 1000, 700, "超时确认.bmp|禁用确认.bmp", "000000", 0.8, 0, out x, out y) != -1)
             {
                 dm.MoveTo((int)x, (int)y);
+                dm.LeftClick();
+            }
+            if (dm.FindPic(0, 0, 1000, 700, "禁用图片1.bmp", "000000", 0.8, 0, out x, out y) != -1)
+            {
+                dm.MoveTo(423, 363);
                 dm.LeftClick();
             }
             if (dm.FindPic(0, 0, 1000, 700, "胜利.bmp", "000000", 0.8, 0, out x, out y) != -1)
@@ -99,7 +104,7 @@ namespace 星小夜的登录器
                 dm.MoveTo((int)x, (int)y);
                 dm.LeftClick();
             }
-            if (dm.FindPic(0, 0, 1000, 700, "sptrespd1.bmp", "000000", 0.8, 0, out x, out y) != -1)
+            if (dm.FindPic(0, 0, 1000, 700, "sptrespd1.bmp|战斗胜利确认.bmp", "000000", 0.8, 0, out x, out y) != -1)
             {
                 dm.MoveTo((int)x, (int)y);
                 dm.LeftClick();
@@ -159,6 +164,7 @@ namespace 星小夜的登录器
             }
             if (dm.FindPic(0, 0, 1000, 1000, "ban.bmp", "000000", 0.8, 0,out x,out y) != -1)
             {
+                Delay(1000);
                 var scripttask2=Peakscript2.StartNew(() => Bans());
                 cts2.Dispose();
 
@@ -260,12 +266,13 @@ namespace 星小夜的登录器
             {
                 for (int i = 0; i < 60; i++)
                 {
-                    if (dm.FindPic(480, 0, 1000, 1000, "确认.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                    if (dm.FindPic(0, 0, 1000, 1000, "禁用图片1.bmp", "000000", 0.8, 0, out x, out y) != -1)
                     {
-                        dm.MoveTo((int)x, (int)y);
+                        dm.MoveTo(423,363);
                         dm.LeftClick();
                         break;
                     }
+                    Delay(500);
                 }
             }
             else
@@ -280,12 +287,13 @@ namespace 星小夜的登录器
                 dm.LeftClick();
                 for (int i = 0; i < 30; i++)
                 {
-                    if (dm.FindPic(480, 0, 1000, 1000, "确认.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                    if (dm.FindPic(0, 0, 1000, 1000, "禁用图片1.bmp", "000000", 0.8, 0, out x, out y) != -1)
                     {
-                        dm.MoveTo((int)x, (int)y);
+                        dm.MoveTo(423,363);
                         dm.LeftClick();
                         break;
                     }
+                    Delay(500);
                 }
             }
         }
@@ -821,12 +829,12 @@ namespace 星小夜的登录器
                 }else if (dm.FindPic(83, 9, 212, 100, "dqxw.bmp|dqxw2.bmp", "000000", 0.8, 0, out x, out y) != -1)//希瓦专属出招
                 {
                     if (Nowwizard != "希瓦")
-                        Nowwizardskill = "白日喧嚣";
+                        Nowwizardskill = "黑夜寂寥";
                     Nowwizard = "希瓦";
 
-                    if (Nowwizardskill == "白日喧嚣")
+                    if (Nowwizardskill == "黑夜寂寥")
                     {
-                        if (dm.FindPic(66, 417, 836, 565, "jn-brxx.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        if (dm.FindPic(66, 417, 836, 565, "jn-hyjl.bmp", "000000", 0.8, 0, out x, out y) != -1)
                         {
                             dm.MoveTo((int)x, (int)y);
                             dm.LeftClick();
@@ -839,6 +847,15 @@ namespace 星小夜的登录器
                         {
                             dm.MoveTo(40, 506);
                             dm.LeftClick();
+                            Nowwizardskill = "白日喧嚣";
+                        }
+                    }
+                    else if (Nowwizardskill == "白日喧嚣")
+                    {
+                        if (dm.FindPic(66, 417, 836, 565, "jn-brxx.bmp", "000000", 0.8, 0, out x, out y) != -1)
+                        {
+                            dm.MoveTo((int)x, (int)y);
+                            dm.LeftClick();
                             Nowwizardskill = "第五2";
                         }
                     }
@@ -848,7 +865,7 @@ namespace 星小夜的登录器
                         {
                             dm.MoveTo(40, 506);
                             dm.LeftClick();
-                            Nowwizardskill = "白日喧嚣";
+                            Nowwizardskill = "第五2";
                         }
                     }
 

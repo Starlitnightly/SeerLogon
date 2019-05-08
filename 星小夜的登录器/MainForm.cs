@@ -14,6 +14,7 @@ using System.IO;
 using dmNet;
 using C_DM;
 
+
 namespace 星小夜的登录器
 {
    
@@ -58,7 +59,7 @@ namespace 星小夜的登录器
         private void button1_Click(object sender, EventArgs e)
         {
             int pid;
-            pid = Getseerhwnd2();
+            pid = Int32.Parse(textBox1.Text);
             dm.BindWindow(pid, "dx2", "windows", "windows", 0);
         }//无
 
